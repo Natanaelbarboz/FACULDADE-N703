@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Editar Pessoa</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Pessoa</h1>
+        <form method="POST">
+            Nome: <input type="text" name="Nome" value="{{ pessoa.Nome }}"><br>
+            Idade: <input type="number" name="Idade" value="{{ pessoa.Idade }}"><br>
+            Contato: <input type="text" name="Contato" value="{{ pessoa.Contato }}"><br>
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista de Pessoas</h1>
+        <a class="btn" href="{{ url_for('adicionar') }}">Adicionar Pessoa</a>
+        <ul>
+            {% for pessoa in pessoas %}
+                <li>
+                    Nome: {{ pessoa.Nome }} <br>
+                    Idade: {{ pessoa.Idade }} anos <br>
+                    Contato: {{ pessoa.Contato }} <br>
+                    <div>
+                        <a class="btn" href="{{ url_for('editar', id=pessoa._id) }}">Editar</a>
+                        <a class="btn" href="{{ url_for('deletar', id=pessoa._id) }}" style="background: red;">Deletar</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
