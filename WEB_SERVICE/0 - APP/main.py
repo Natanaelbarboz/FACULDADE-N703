@@ -16,35 +16,43 @@ from post import def_post
 from get import def_get
 from update import def_update
 from delete import def_delete
+from login import sessao
+from login import pessoas
 
 
-ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("dark-blue")
+pessoas = sessao()
+if pessoas is None:
+    print("Erro: Login não realizado! Encerrando programa.")
+    exit()
 
-root = ctk.CTk()
-root.title("CADASTRO DE CLIENTES")
-root.geometry("800x500")
-# root.resizable(False, False)
+# Se login deu certo, inicia a aplicação
+def iniciar_aplicacao():
+    ctk.set_appearance_mode("dark")
+    ctk.set_default_color_theme("dark-blue")
 
+    root = ctk.CTk()
+    root.title("CADASTRO DE CLIENTES")
+    root.geometry("900x600")
 
-cabecalho = ctk.CTkLabel(root, pady=15, text="SISTEMA DE CADASTRO DE CLIENTES", width=200, height=25, font=('arial bold', 26))
-cabecalho.pack()
+    cabecalho = ctk.CTkLabel(root, pady=15, text="VIDAS PET - ONG DE RESGATE", width=200, height=25, font=('arial bold', 26))
+    cabecalho.pack()
 
-frame = ctk.CTkFrame(root, width=500, height=400)
-frame.pack(expand=False, fill="both", padx=15, pady=10)
-frame.pack_propagate(False)
+    frame = ctk.CTkFrame(root, width=500, height=400)
+    frame.pack(expand=False, fill="both", padx=15, pady=10)
+    frame.pack_propagate(False)
 
-def_get(frame)
+    def_get(frame, pessoas)  # Chama a função apenas agora, com `pessoas` já definido
 
+    btn_post = ctk.CTkButton(root, text='CADASTRAR', command=lambda: def_post(root, pessoas))
+    btn_post.place(x=50, y=500)
 
-btn_post = ctk.CTkButton(root, text='CRIAR NOVO CLIENTE',command=lambda:[def_post(root)])
-btn_post.place(x=50, y=500)
+    btn_update = ctk.CTkButton(root, text='EDITAR', command=lambda: def_update(root, pessoas))
+    btn_update.place(x=200, y=500)
 
-btn_update = ctk.CTkButton(root, text='EDITAR CLIENTE',command=lambda:[def_update(root)])
-btn_update.place(x=200, y=500)
+    btn_delete = ctk.CTkButton(root, text='EXCLUIR', command=lambda: def_delete(root, pessoas))
+    btn_delete.place(x=350, y=500)
 
-btn_delete = ctk.CTkButton(root, text='EXCLUIR',command=lambda:[def_delete(root)])
-btn_delete.place(x=350, y=500)
+    root.mainloop()
 
-
-root.mainloop()
+# Agora só inicia a aplicação se `pessoas` existir
+iniciar_aplicacao()

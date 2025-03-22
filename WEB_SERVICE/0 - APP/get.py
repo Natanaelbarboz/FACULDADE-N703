@@ -2,22 +2,23 @@ from tkinter import Tk, Frame, ttk
 import pandas as pd
 from pymongo import MongoClient
 from update import on_tree_select
+from login import pessoas
 
 # Variável global para armazenar a Treeview
 tree = None
 
-def def_get(frame):
+def def_get(frame, pessoas):
     global tree  
 
     # Ler credenciais
-    with open('../.gitignore', 'r') as arquivo:
-        usuario, senha = [linha.strip() for linha in arquivo.readlines()]
+    # with open('../.gitignore', 'r') as arquivo:
+    #     usuario, senha = [linha.strip() for linha in arquivo.readlines()]
 
-    # Conectar ao MongoDB
-    uri = f'mongodb+srv://{usuario}:{senha}@n703.dfo9g.mongodb.net/?retryWrites=true&w=majority&appName=N703'
-    client = MongoClient(uri)
-    db = client['N703-WEB-SERVICE']
-    pessoas = db['Pessoas']
+    # # Conectar ao MongoDB
+    # uri = f'mongodb+srv://{usuario}:{senha}@n703.dfo9g.mongodb.net/?retryWrites=true&w=majority&appName=N703'
+    # client = MongoClient(uri)
+    # db = client['N703-WEB-SERVICE']
+    # pessoas = db['Pessoas']
 
     # Pegar os dados do MongoDB
     dic = list(pessoas.find())  # Buscar todos os documentos
@@ -34,7 +35,7 @@ def def_get(frame):
 
     # Ajustar a ordem das colunas
     if {'ID', 'Nome', 'Idade', 'Contato'}.issubset(base.columns):
-        base = base[['ID', 'Nome', 'Idade', 'Contato']]
+        base = base[['ID', 'Nome', 'Idade', 'Contato', 'Rua', 'Bairro', 'Cidade']]
     else:
         print("Erro: Algumas colunas esperadas não foram encontradas!")
         return  
@@ -63,4 +64,4 @@ def def_get(frame):
     # print("Tabela atualizada com sucesso!")
 
     # Atualizar a cada 5 segundos
-    frame.after(5000, lambda: def_get(frame))
+    frame.after(5000, lambda: def_get(frame, pessoas))

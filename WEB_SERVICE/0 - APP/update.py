@@ -7,14 +7,18 @@ from pymongo import MongoClient
 from bson import ObjectId
 
 from pop_up_selec_update import def_pop_up_update
+from login import pessoas
 
 index_value = None
 nome = None
 idade = None
 contato = None
+rua = None
+bairro = None
+cidade = None
 
 def on_tree_select(event, tree):
-    global index_value, nome, idade, contato  # Declarando que estamos usando as variáveis globais
+    global index_value, nome, idade, contato, rua, bairro, cidade  # Declarando que estamos usando as variáveis globais
 
     selected_item = tree.focus()  # Obtém o item selecionado
     item_values = tree.item(selected_item, "values")
@@ -24,20 +28,26 @@ def on_tree_select(event, tree):
         nome = item_values[1]
         idade = item_values[2]
         contato = item_values[3]
+        rua = item_values[4]
+        bairro = item_values[5]
+        cidade = item_values[6]
         print(f"Índice selecionado: {index_value}")
-        return index_value, nome, idade, contato
+        return index_value, nome, idade, contato, rua, bairro, cidade
     
     return None, None, None, None
 
-def def_update(root):
+def def_update(root, pessoas):
 
-    def update(root, index_value, nome, idade, contato):
+    def update(root, index_value, nome, idade, contato, rua, bairro, cidade):
 
         root.withdraw()
     
         nome_var = ctk.StringVar(value=nome)
         idade_var = ctk.StringVar(value=idade)
         contato_var = ctk.StringVar(value=contato)
+        rua_var = ctk.StringVar(value=rua)
+        bairro_var = ctk.StringVar(value=bairro)
+        cidade_var = ctk.StringVar(value=cidade)
 
         frame = ctk.CTkToplevel()
         frame.title("Cadastro de clientes")
@@ -46,7 +56,10 @@ def def_update(root):
 
         ctk.CTkLabel(frame, text="NOME", width=150, font=("roboto", 14)).place(x=25, y=115)
         ctk.CTkLabel(frame, text="IDADE", width=150, font=("roboto", 14)).place(x=25, y=150)
-        ctk.CTkLabel(frame, text="TEL + DDD", width=150, font=("roboto", 14)).place(x=25, y=185)
+        ctk.CTkLabel(frame, text="CONTATO", width=150, font=("roboto", 14)).place(x=25, y=185)
+        ctk.CTkLabel(frame, text="RUA", width=150, font=("roboto", 14)).place(x=25, y=220)
+        ctk.CTkLabel(frame, text="BAIRRO", width=150, font=("roboto", 14)).place(x=25, y=255)
+        ctk.CTkLabel(frame, text="CIDADE", width=150, font=("roboto", 14)).place(x=25, y=290)
 
         label_nome = ctk.CTkEntry(frame, textvariable=nome_var, width=350, font=("roboto", 14))
         label_nome.place(x=200, y=115)
@@ -57,6 +70,15 @@ def def_update(root):
         label_contato = ctk.CTkEntry(frame, textvariable=contato_var, width=350, font=("roboto", 14))
         label_contato.place(x=200, y=185)
 
+        label_rua = ctk.CTkEntry(frame, textvariable=rua_var, width=350, font=("roboto", 14))
+        label_rua.place(x=200, y=220)
+
+        label_bairro = ctk.CTkEntry(frame, textvariable=bairro_var, width=350, font=("roboto", 14))
+        label_bairro.place(x=200, y=255)
+
+        label_cidade = ctk.CTkEntry(frame, textvariable=cidade_var, width=350, font=("roboto", 14))
+        label_cidade.place(x=200, y=290)
+
         def fechar_janela():
             frame.destroy()
             root.deiconify()
@@ -64,7 +86,7 @@ def def_update(root):
         frame.protocol("WM_DELETE_WINDOW", fechar_janela)
 
         def obter_valores():
-            return nome_var.get(), idade_var.get(), contato_var.get()
+            return nome_var.get(), idade_var.get(), contato_var.get(), rua_var.get(), bairro_var.get(), cidade_var.get()
         
         def salvar_e_atualizar():
             salvar()
@@ -72,7 +94,7 @@ def def_update(root):
             frame.after(1250, def_pop_up_update(root))
 
         def salvar():
-            nome_editado, idade_editada, contato_editado = obter_valores()
+            nome_editado, idade_editada, contato_editado, rua_editado, bairro_editado, cidade_editado = obter_valores()
             
             if not index_value:
                 print("Erro: index_value indefinido!")
@@ -87,19 +109,22 @@ def def_update(root):
             dados = {
                 "Nome": nome_editado,
                 "Idade": idade_editada,
-                "Contato": contato_editado
+                "Contato": contato_editado,
+                "Rua":rua_editado,
+                "Bairro":bairro_editado,
+                "Cidade":cidade_editado
             }
 
-            with open('../.gitignore', 'r') as arquivo:
-                linhas = arquivo.readlines()
+            # with open('../.gitignore', 'r') as arquivo:
+            #     linhas = arquivo.readlines()
 
-            usuario = linhas[0].strip()
-            senha = linhas[1].strip()
+            # usuario = linhas[0].strip()
+            # senha = linhas[1].strip()
             
-            uri = f'mongodb+srv://{usuario}:{senha}@n703.dfo9g.mongodb.net/?retryWrites=true&w=majority&appName=N703'
-            client = MongoClient(uri)
-            db = client['N703-WEB-SERVICE']
-            pessoas = db['Pessoas']
+            # uri = f'mongodb+srv://{usuario}:{senha}@n703.dfo9g.mongodb.net/?retryWrites=true&w=majority&appName=N703'
+            # client = MongoClient(uri)
+            # db = client['N703-WEB-SERVICE']
+            # pessoas = db['Pessoas']
 
             # Agora passamos um ObjectId correto para a consulta
             resultado = pessoas.update_one({"_id": object_id}, {"$set": dados})
@@ -109,7 +134,7 @@ def def_update(root):
             else:
                 print(f"Nenhuma modificação feita para {index_value}.")
 
-            client.close()
+            # client.close()
 
 
         btn_update = ctk.CTkButton(frame, text='SALVAR', command=salvar_e_atualizar)
@@ -120,5 +145,5 @@ def def_update(root):
 
         frame.mainloop()
 
-    update(root, index_value, nome, idade, contato)
+    update(root, index_value, nome, idade, contato, rua, bairro, cidade)
     

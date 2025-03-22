@@ -7,8 +7,9 @@ from bson import ObjectId
 import update  # Importa o módulo inteiro
 from pop_up_delete import def_pop_up_delete
 from pop_up_selec_vazia import def_pop_up_vazio
+from login import pessoas
 
-def def_delete(root):
+def def_delete(root, pessoas):
     try:
         if update.index_value is None:            
             print('Não há valor selecionado')
@@ -22,20 +23,20 @@ def def_delete(root):
             return
 
         # Lendo credenciais do arquivo
-        try:
-            with open('../.gitignore', 'r') as arquivo:
-                linhas = arquivo.readlines()
-                usuario = linhas[0].strip()
-                senha = linhas[1].strip()
-        except Exception as e:
-            print(f"Erro ao ler credenciais: {e}")
-            return
+        # try:
+        #     with open('../.gitignore', 'r') as arquivo:
+        #         linhas = arquivo.readlines()
+        #         usuario = linhas[0].strip()
+        #         senha = linhas[1].strip()
+        # except Exception as e:
+        #     print(f"Erro ao ler credenciais: {e}")
+        #     return
 
-        # Conectando ao banco
-        uri = f'mongodb+srv://{usuario}:{senha}@n703.dfo9g.mongodb.net/?retryWrites=true&w=majority&appName=N703'
-        client = MongoClient(uri)
-        db = client['N703-WEB-SERVICE']
-        pessoas = db['Pessoas']
+        # # Conectando ao banco
+        # uri = f'mongodb+srv://{usuario}:{senha}@n703.dfo9g.mongodb.net/?retryWrites=true&w=majority&appName=N703'
+        # client = MongoClient(uri)
+        # db = client['N703-WEB-SERVICE']
+        # pessoas = db['Pessoas']
 
         # Tentando excluir o documento
         resultado = pessoas.delete_one({"_id": object_id})
