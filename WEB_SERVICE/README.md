@@ -17,4 +17,7 @@ Porjeto de web service.
 --> Logica: Python
 --> Banco de dados: Mongo DB utilizando a biblioteca pymongo
 
+Para entra no site ou aplicativo é necessário usuário e senha, gentileza utilizar as credenciais abaixo:
 
+login = user_test
+senha = user_test
