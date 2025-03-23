@@ -55,6 +55,9 @@ def def_update(root, pessoas):
         frame.geometry("650x600")
         frame.resizable(False, False)
 
+        sub_titulo = ctk.CTkLabel(frame, text="EDITAR AMIGO DOS PETS", font=("roboto", 18))
+        sub_titulo.place(x=250, y=10)
+
         ctk.CTkLabel(frame, text="NOME", width=150, font=("roboto", 14)).place(x=25, y=115)
         ctk.CTkLabel(frame, text="IDADE", width=150, font=("roboto", 14)).place(x=25, y=150)
         ctk.CTkLabel(frame, text="CONTATO", width=150, font=("roboto", 14)).place(x=25, y=185)

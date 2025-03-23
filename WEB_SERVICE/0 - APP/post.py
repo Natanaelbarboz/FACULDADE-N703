@@ -25,7 +25,7 @@ def def_post(root, pessoas):
     frame.geometry("650x600")
     frame.resizable(False, False)
 
-    sub_titulo = ctk.CTkLabel(frame, text="CADASTRO AMIGOS DOS PETS", font=("roboto", 18))
+    sub_titulo = ctk.CTkLabel(frame, text="CADASTRO AMIGO DOS PETS", font=("roboto", 18))
     sub_titulo.place(x=250, y=10)
 
     text_nome = ctk.CTkLabel(frame, text="NOME", width=150, font=("roboto", 14))
