@@ -17,12 +17,12 @@ def sessao():
 
     frame = ctk.CTk()
     # frame = ctk.CTkToplevel()
-    frame.title("VIDA PET")
+    frame.title("N703-WEB-SERVICE")
     frame.geometry("450x300")
     frame.resizable(False, False)
 
 
-    titulo = ctk.CTkLabel(frame, text="BEM VINDO(A) A CAUSA PET", font=("roboto", 20))
+    titulo = ctk.CTkLabel(frame, text="BEM VINDO(A) A ONG VIDAS PET", font=("roboto", 20))
     titulo.place(x=90, y=40)
 
     sub_titulo = ctk.CTkLabel(frame, text="LOGIN", font=("roboto", 14))

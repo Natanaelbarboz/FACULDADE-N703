@@ -9,7 +9,7 @@ def def_pop_up_wrong(frame):
     ctk.set_default_color_theme("dark-blue")
 
     frame_wrong = ctk.CTkToplevel()
-    frame_wrong.title("VIDA PET")
+    frame_wrong.title("ATENÇÃO")
     frame_wrong.geometry("450x300")
     frame_wrong.resizable(False, False)
 
@@ -17,7 +17,7 @@ def def_pop_up_wrong(frame):
     cabecalho = ctk.CTkLabel(frame_wrong, pady=15, text="ATENÇÃO", width=200, height=25, font=('arial bold', 26))
     cabecalho.pack()
 
-    texto = ctk.CTkLabel(frame_wrong, pady=40, text="Usuário ou senha incorreto, tente novamente", width=200, height=25, font=('arial bold', 18))
+    texto = ctk.CTkLabel(frame_wrong, pady=40, text="USUÁRIO OU SENHA INCORRETOS,\nTENTE NOVAMENTE", width=200, height=25, font=('arial bold', 18))
     texto.pack()
 
     btn_ok = ctk.CTkButton(frame_wrong, text='OK',command=lambda: [fechar_janela(frame_wrong, frame)])

@@ -14,19 +14,19 @@ def def_pop_up_update(root):
     ctk.set_default_color_theme("dark-blue")
 
     frame_update = ctk.CTkToplevel()
-    frame_update.title("Alerta")
-    frame_update.geometry("300x250")
+    frame_update.title("ATENÇÃO!!!")
+    frame_update.geometry("450x300")
     frame_update.resizable(False, False)
 
 
     cabecalho = ctk.CTkLabel(frame_update, pady=15, text="ATENÇÃO", width=200, height=25, font=('arial bold', 26))
     cabecalho.pack()
 
-    texto = ctk.CTkLabel(frame_update, pady=40, text="Item editado com sucesso", width=200, height=25, font=('arial bold', 18))
+    texto = ctk.CTkLabel(frame_update, pady=40, text="AMIGO EDITADO COM SUCESSO", width=200, height=25, font=('arial bold', 18))
     texto.pack()
 
     btn_ok = ctk.CTkButton(frame_update, text='OK',command=lambda: [fechar_janela(frame_update, root)])
-    btn_ok.place(x=80, y=175)
+    btn_ok.place(x=150, y=225)
 
     frame_update.protocol("WM_DELETE_WINDOW", lambda: [fechar_janela(frame_update, root)])
 

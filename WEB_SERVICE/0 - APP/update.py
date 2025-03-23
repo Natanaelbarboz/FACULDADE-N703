@@ -8,6 +8,7 @@ from bson import ObjectId
 
 from pop_up_selec_update import def_pop_up_update
 from login import pessoas
+from pop_up_selec_vazia import def_pop_up_vazio
 
 index_value = None
 nome = None
@@ -50,7 +51,7 @@ def def_update(root, pessoas):
         cidade_var = ctk.StringVar(value=cidade)
 
         frame = ctk.CTkToplevel()
-        frame.title("Cadastro de clientes")
+        frame.title("ONG - VIDAS PET")
         frame.geometry("650x600")
         frame.resizable(False, False)
 
@@ -89,16 +90,22 @@ def def_update(root, pessoas):
             return nome_var.get(), idade_var.get(), contato_var.get(), rua_var.get(), bairro_var.get(), cidade_var.get()
         
         def salvar_e_atualizar():
-            salvar()
-            frame.after(750,fechar_janela())
-            frame.after(1250, def_pop_up_update(root))
+            if index_value is None:
+                print("Erro: index_value indefinido!")
+                def_pop_up_vazio(frame)
+                return
+            else:
+                salvar()
+                frame.after(750,fechar_janela())
+                frame.after(1250, def_pop_up_update(root))
 
         def salvar():
             nome_editado, idade_editada, contato_editado, rua_editado, bairro_editado, cidade_editado = obter_valores()
             
-            if not index_value:
-                print("Erro: index_value indefinido!")
-                return
+            # if index_value is None:
+            #     print("Erro: index_value indefinido!")
+            #     return
+                
             
             try:
                 object_id = ObjectId(index_value)  # Converte para ObjectId
@@ -146,4 +153,11 @@ def def_update(root, pessoas):
         frame.mainloop()
 
     update(root, index_value, nome, idade, contato, rua, bairro, cidade)
-    
+
+def def_val_valor(root, pessoas):
+    if index_value is None:
+        print("Erro: index_value indefinido!")
+        def_pop_up_vazio(root)
+    else:
+        def_update(root, pessoas)
+    return

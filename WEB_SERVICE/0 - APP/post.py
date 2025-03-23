@@ -21,7 +21,7 @@ def def_post(root, pessoas):
 
     # frame = ctk.CTk()
     frame = ctk.CTkToplevel()
-    frame.title("CADASTRO")
+    frame.title("ONG - VIDAS PET")
     frame.geometry("650x600")
     frame.resizable(False, False)
 
@@ -55,7 +55,7 @@ def def_post(root, pessoas):
     label_contato = ctk.CTkEntry(frame, placeholder_text="Informe o contato com DDD", width=350, font=("roboto", 14))
     label_contato.place(x=200, y=185)
 
-    label_rua = ctk.CTkEntry(frame, placeholder_text="Informe a rua", width=350, font=("roboto", 14))
+    label_rua = ctk.CTkEntry(frame, placeholder_text="Informe a rua com número", width=350, font=("roboto", 14))
     label_rua.place(x=200, y=220)
 
     label_bairro = ctk.CTkEntry(frame, placeholder_text="Informe o bairro", width=350, font=("roboto", 14))
