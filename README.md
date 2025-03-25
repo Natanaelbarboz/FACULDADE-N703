@@ -12,19 +12,19 @@ Porjeto de web service.
  * Link: https://pet-k90a.onrender.com </br></br>
 
 * Tela de Login - WEB:</br>
-![Tela de Login WEB](img_readme/tela_login_web.png)</br>
+![Tela de Login WEB](WEB_SERVICE/img_readme/tela_login_web.png)</br>
 
 * Tela Principal - WEB:</br>
-![Tela principal WEB](img_readme/tela_principal_web.png)</br>
+![Tela principal WEB](WEB_SERVICE/img_readme/tela_principal_web.png)</br>
 
 * Tela de Cadastro de Amigo - WEB:</br>
-![Tela cadastro WEB](img_readme/tela_cadastro_web.png)</br>
+![Tela cadastro WEB](WEB_SERVICE/img_readme/tela_cadastro_web.png)</br>
 
 * Tela de Edição de Amigo - WEB:</br>
-![Tela edição do WEB](img_readme/tela_edicao_web.png)</br>
+![Tela edição do WEB](WEB_SERVICE/img_readme/tela_edicao_web.png)</br>
 
 * Boatão de Exclusão - WEB:</br>
-![Botão de exclusão de amigo WEB](img_readme/btn_excluir_web.png)</br>
+![Botão de exclusão de amigo WEB](WEB_SERVICE/img_readme/btn_excluir_web.png)</br>
 
 
 2 - Aplicativo desktop para cadastro de contatos dos voluntários da ONG VIDAS PET.</br>
@@ -39,19 +39,19 @@ Porjeto de web service.
 --> /0 - APP/APP_EXE e executar o aplicativo N703_APP.exe</br></br>
 
 * Tela de Login - APP:</br>
-![Tela de Login APP](img_readme/tela_login_app.png)</br>
+![Tela de Login APP](WEB_SERVICE/img_readme/tela_login_app.png)</br>
 
 * Tela Principal - APP:</br>
-![Tela principal do APP](img_readme/tela_principal_app.png)</br>
+![Tela principal do APP](WEB_SERVICE/img_readme/tela_principal_app.png)</br>
 
 * Tela de Cadastro de Amigo - APP:</br>
-![Tela cadastro do APP](img_readme/tela_de_inclusao_app.png)</br>
+![Tela cadastro do APP](WEB_SERVICE/img_readme/tela_de_inclusao_app.png)</br>
 
 * Tela de Edição de Amigo - APP:</br>
-![Tela edição do APP](img_readme/tela_edicao_app.png)</br>
+![Tela edição do APP](WEB_SERVICE/img_readme/tela_edicao_app.png)</br>
 
 * Boatão de Exclusão - APP</br>
-![Botão de exclusão de amigo APP](img_readme/botao_exclusao_app.png)</br></br></br>
+![Botão de exclusão de amigo APP](WEB_SERVICE/img_readme/botao_exclusao_app.png)</br></br></br>
 
 
 
