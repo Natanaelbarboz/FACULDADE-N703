@@ -4,8 +4,8 @@ Porjeto de web service.
 
 * Aplicação criada com HTML, CSS, Flesk e Mongo DB.</br>
  --> Font End: HTML, CSS</br>
- --> Banck End: Felsk</br>
- --> Banco de dados: Mongo DB</br></br>
+ --> Back-end: Flask</br>
+ --> Banco de dados: MongoDB  API </br></br>
 
 * Tela de Login WEB:</br>
 ![Tela de Login WEB](img_readme/tela_login_web.png)</br>
@@ -28,8 +28,8 @@ Porjeto de web service.
 * Aplicativo criado com python</br>
 
 --> Interface: Biblioteca CustomTkinter</br>
---> Logica: Python
---> Banco de dados: Mongo DB utilizando a biblioteca pymongo</br></br>
+--> Logica/Back-end: Python</br>
+--> Banco de dados: MongoDB (utilizando a biblioteca pymongo)</br></br>
 
 * Tela de Login APP:</br>
 ![Tela de Login APP](img_readme/tela_login_app.png)</br>
@@ -48,7 +48,7 @@ Porjeto de web service.
 
 
 
-* Para entra no site ou aplicativo é necessário usuário e senha, gentileza utilizar as credenciais abaixo WEB:
+* Para entra no site ou aplicativo é necessário usuário e senha, gentileza utilizar as credenciais abaixo:
 
-** login = user_test
-** senha = user_test
+* login = user_test</br>
+* senha = user_test</br>
