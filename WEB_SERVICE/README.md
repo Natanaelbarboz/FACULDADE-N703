@@ -7,6 +7,10 @@ Porjeto de web service.
  --> Back-end: Flask</br>
  --> Banco de dados: MongoDB</br></br>
 
+ * O site está hospedado de forma gratuita no RENDER, caso o link abaixo demore a carregar, gentileza acessa a pasta:</br>
+ --> /1 - WEB e executar o arquivo app.py e assim abrirar a tela do seu navegador com a aplicação.</br>
+ * Link: https://pet-k90a.onrender.com </br></br>
+
 * Tela de Login - WEB:</br>
 ![Tela de Login WEB](img_readme/tela_login_web.png)</br>
 
@@ -30,6 +34,9 @@ Porjeto de web service.
 --> Interface: Biblioteca CustomTkinter</br>
 --> Logica/Back-end: Python</br>
 --> Banco de dados: MongoDB (utilizando a biblioteca pymongo)</br></br>
+
+* Para executar o aplicativo, gentileza acessar o caminho:</br>
+--> /0 - APP/APP_EXE e executar o aplicativo N703_APP.exe</br></br>
 
 * Tela de Login - APP:</br>
 ![Tela de Login APP](img_readme/tela_login_app.png)</br>
