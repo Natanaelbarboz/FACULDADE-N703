@@ -5,21 +5,21 @@ Porjeto de web service.
 * Aplicação criada com HTML, CSS, Flesk e Mongo DB.</br>
  --> Font End: HTML, CSS</br>
  --> Back-end: Flask</br>
- --> Banco de dados: MongoDB  API </br></br>
+ --> Banco de dados: MongoDB</br></br>
 
-* Tela de Login WEB:</br>
+* Tela de Login - WEB:</br>
 ![Tela de Login WEB](img_readme/tela_login_web.png)</br>
 
-* Tela Principal WEB:</br>
+* Tela Principal - WEB:</br>
 ![Tela principal WEB](img_readme/tela_principal_web.png)</br>
 
-* Tela de Cadastro de Amigo WEB:</br>
+* Tela de Cadastro de Amigo - WEB:</br>
 ![Tela cadastro WEB](img_readme/tela_cadastro_web.png)</br>
 
-* Tela de Edição de Amigo WEB:</br>
+* Tela de Edição de Amigo - WEB:</br>
 ![Tela edição do WEB](img_readme/tela_edicao_web.png)</br>
 
-* Boatão de Exclusão WEB:</br>
+* Boatão de Exclusão - WEB:</br>
 ![Botão de exclusão de amigo WEB](img_readme/btn_excluir_web.png)</br>
 
 
@@ -31,19 +31,19 @@ Porjeto de web service.
 --> Logica/Back-end: Python</br>
 --> Banco de dados: MongoDB (utilizando a biblioteca pymongo)</br></br>
 
-* Tela de Login APP:</br>
+* Tela de Login - APP:</br>
 ![Tela de Login APP](img_readme/tela_login_app.png)</br>
 
-* Tela Principal APP:</br>
+* Tela Principal - APP:</br>
 ![Tela principal do APP](img_readme/tela_principal_app.png)</br>
 
-* Tela de Cadastro de Amigo APP:</br>
+* Tela de Cadastro de Amigo - APP:</br>
 ![Tela cadastro do APP](img_readme/tela_de_inclusao_app.png)</br>
 
-* Tela de Edição de Amigo APP:</br>
+* Tela de Edição de Amigo - APP:</br>
 ![Tela edição do APP](img_readme/tela_edicao_app.png)</br>
 
-* Boatão de Exclusão APP</br>
+* Boatão de Exclusão - APP</br>
 ![Botão de exclusão de amigo APP](img_readme/botao_exclusao_app.png)</br></br></br>
 
 
