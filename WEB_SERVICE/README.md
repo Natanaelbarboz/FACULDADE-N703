@@ -1,6 +1,6 @@
 Porjeto de web service.
 
-1 - Aplicação web de cadastro de contatos da ONG VIDAS PET </br>
+1 - Aplicação web para cadastro de contatos dos voluntários da ONG VIDAS PET </br>
 
 * Aplicação criada com HTML, CSS, Flesk e Mongo DB.</br>
  --> Font End: HTML, CSS</br>
@@ -27,7 +27,7 @@ Porjeto de web service.
 ![Botão de exclusão de amigo WEB](img_readme/btn_excluir_web.png)</br>
 
 
-2 - Aplicativo desktop para cadastro de contatos da ONG VIDAS PET.</br>
+2 - Aplicativo desktop para cadastro de contatos dos voluntários da ONG VIDAS PET.</br>
 
 * Aplicativo criado com python</br>
 
