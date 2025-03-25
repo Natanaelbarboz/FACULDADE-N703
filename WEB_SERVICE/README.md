@@ -1,10 +1,6 @@
 Porjeto de web service.
 
-<<<<<<< HEAD
 1 - Aplicação web de cadastro de contatos dos voluntários da ONG VIDAS PET </br>
-=======
-1 - Aplicação web para cadastro de contatos dos voluntários da ONG VIDAS PET </br>
->>>>>>> c4204c13e5afb2ca660117dfd33a47b1f5ccc048
 
 * Aplicação criada com HTML, CSS, Flesk e Mongo DB.</br>
  --> Font End: HTML, CSS</br>
